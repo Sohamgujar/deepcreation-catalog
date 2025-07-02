@@ -11,38 +11,67 @@
       padding: 20px;
       background: #f1f1f1;
     }
+
     h1 {
       text-align: center;
       color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .categories {
+      text-align: center;
       margin-bottom: 30px;
     }
+
+    .categories button {
+      background-color: #228b22;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .categories button:hover {
+      background-color: #1c6b1c;
+    }
+
     .catalog {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
+
     .product {
       background: white;
       padding: 15px;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       text-align: center;
+      transition: 0.3s ease;
     }
+
     .product img {
       max-width: 100%;
       border-radius: 10px;
       height: 180px;
       object-fit: cover;
     }
+
     .product h3 {
       margin: 10px 0 5px;
       color: #333;
     }
+
     .product p {
       margin: 5px 0;
       color: #555;
       font-size: 14px;
     }
+
     .whatsapp {
       display: inline-block;
       margin-top: 10px;
@@ -52,6 +81,7 @@
       border-radius: 8px;
       text-decoration: none;
     }
+
     .whatsapp:hover {
       background-color: #128C7E;
     }
@@ -61,57 +91,74 @@
 
   <h1>Deep Creation Product Catalog</h1>
 
+  <!-- ✅ Categories Filter -->
+  <div class="categories">
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('rangoli')">Rangoli</button>
+    <button onclick="filterProducts('backdrop')">Back-Drop</button>
+  </div>
+
+  <!-- ✅ Product Grid -->
   <div class="catalog">
+    
+    <!-- Product 1: Rangoli -->
+    <div class="product rangoli">
+      <img src="https://i.ibb.co/HT6DbwwQ/Whats-App-Image-2025-06-08-at-18-32-24-86893970.jpg" alt="Ganpati Decor">
+      <h3>Rangoli</h3>
+      <p><strong>Price:</strong> ₹2700</p>
+      <p>Vibrant Ganpati decoration with elegant backdrop and floral items.</p>
+      <a class="whatsapp" href="https://wa.me/919545668366?text=I want to buy Rangoli (₹2700)%0AImage: https://i.ibb.co/HT6DbwwQ/Whats-App-Image-2025-06-08-at-18-32-24-86893970.jpg" target="_blank">
+        Buy on WhatsApp
+      </a>
+    </div>
 
-    <!-- ✅ Product 1 -->
-    <div class="product">
-  <img src="https://i.ibb.co/HT6DbwwQ/Whats-App-Image-2025-06-08-at-18-32-24-86893970.jpg" alt="Ganpati Decor">
-  <h3>Rangoli</h3>
-  <p><strong>Price:</strong> ₹2700</p>
-  <p>Vibrant Ganpati decoration with elegant backdrop and floral items.</p>
-  <a class="whatsapp" href="https://wa.me/919545668366?text=I want to buy Rangoli (₹2700)%0AImage: https://i.ibb.co/HT6DbwwQ/Whats-App-Image-2025-06-08-at-18-32-24-86893970.jpg" target="_blank">
-  Buy on WhatsApp
-</a>
+    <!-- Product 2: Kundan Rangoli -->
+    <div class="product rangoli">
+      <img src="https://i.ibb.co/8DCnVYs0/Whats-App-Image-2025-06-09-at-14-32-56-d4985f8c.jpg" alt="Kundan Rangoli">
+      <h3>Kundan Rangoli</h3>
+      <p><strong>Price:</strong> ₹2350</p>
+      <p>
+        Enhance your festive decor with the stunning 15 inch x 15 inch MDF Kundan Rangoli from Deep Creation. <br>
+        Our local business is dedicated to offering exquisite handcrafted art that adds a touch of tradition and elegance to your home. <br>
+        This elegant piece, made from durable MDF, showcases intricate Kundan work, making it a perfect centerpiece for any celebration. <br>
+        Easy to assemble and reusable, it's a lasting addition to your festive essentials.
+      </p>
+      <a class="whatsapp" href="https://wa.me/919545668366?text=Hello! I want to order the 'Kundan Rangoli' (₹2350).%0AProduct Image: https://i.ibb.co/8DCnVYs0/Whats-App-Image-2025-06-09-at-14-32-56-d4985f8c.jpg" target="_blank">
+        Buy on WhatsApp
+      </a>
+    </div>
 
-</div>
-
-
-    <!-- ✅ Product 2 -->
-   <div class="product">
-  <img src="https://i.ibb.co/8DCnVYs0/Whats-App-Image-2025-06-09-at-14-32-56-d4985f8c.jpg" alt="Kundan Rangoli">
-  <h3>Kundan Rangoli</h3>
-  <p><strong>Price:</strong> ₹2350</p>
-  <p>
-    Enhance your festive decor with the stunning 15 inch x 15 inch MDF Kundan Rangoli from Deep Creation. <br>
-    Our local business is dedicated to offering exquisite handcrafted art that adds a touch of tradition and elegance to your home. <br>
-    This elegant piece, made from durable MDF, showcases intricate Kundan work, making it a perfect centerpiece for any celebration. <br>
-    Easy to assemble and reusable, its a lasting addition to your festive essentials.
-  </p>
-  <a class="whatsapp" href="https://wa.me/919545668366?text=Hello! I want to order the 'Kundan Rangoli' (₹2350).%0AProduct Image: https://i.ibb.co/8DCnVYs0/Whats-App-Image-2025-06-09-at-14-32-56-d4985f8c.jpg" target="_blank">
-    Buy on WhatsApp
-  </a>
-</div>
-
-
-    <!-- ✅ Add More Products Below -->
-<!--Product 3-->
-<div class="product">
-  <img src="https://i.ibb.co/6J1WFpX7/Whats-App-Image-2025-06-17-at-21-10-30-25fd3209.jpg" alt="Backdrop Decoration">
-  <h3>Backdrop Decoration</h3>
-  <p><strong>Price:</strong> ₹1999</p>
-  <p>
-    This vibrant set features a 3-feet cloth green leaf toran,<br>
-    accompanied by matching 3-feet red and white side latkans (2 pieces).<br>
-    The arrangement includes 6 meticulously designed small latkan patches made from durable plastic cloth, equipped with hooks for easy access.<br>
-    At the heart of this decoration lies a stunning big flower cloth, creating a captivating focal point.
-  </p>
-  <a class="whatsapp" href="https://wa.me/919545668366?text=Hello! I want to order the 'Backdrop Decoration' for ₹1999.%0AProduct Image: https://i.ibb.co/6J1WFpX7/Whats-App-Image-2025-06-17-at-21-10-30-25fd3209.jpg" target="_blank">
-    Buy on WhatsApp
-  </a>
-</div>
-    <!-- Just copy a <div class="product">...</div> block -->
+    <!-- Product 3: Backdrop Decoration -->
+    <div class="product backdrop">
+      <img src="https://i.ibb.co/6J1WFpX7/Whats-App-Image-2025-06-17-at-21-10-30-25fd3209.jpg" alt="Backdrop Decoration">
+      <h3>Backdrop Decoration</h3>
+      <p><strong>Price:</strong> ₹1999</p>
+      <p>
+        This vibrant set features a 3-feet cloth green leaf toran,<br>
+        accompanied by matching 3-feet red and white side latkans (2 pieces).<br>
+        The arrangement includes 6 meticulously designed small latkan patches made from durable plastic cloth, equipped with hooks for easy access.<br>
+        At the heart of this decoration lies a stunning big flower cloth, creating a captivating focal point.
+      </p>
+      <a class="whatsapp" href="https://wa.me/919545668366?text=Hello! I want to order the 'Backdrop Decoration' for ₹1999.%0AProduct Image: https://i.ibb.co/6J1WFpX7/Whats-App-Image-2025-06-17-at-21-10-30-25fd3209.jpg" target="_blank">
+        Buy on WhatsApp
+      </a>
+    </div>
 
   </div>
+
+  <!-- ✅ Filter Script -->
+  <script>
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product');
+      products.forEach(product => {
+        if (category === 'all' || product.classList.contains(category)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>

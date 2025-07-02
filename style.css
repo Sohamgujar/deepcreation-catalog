@@ -63,3 +63,23 @@ header {
 .admin-box button:hover {
   background-color: #45a049;
 }
+.categories {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.categories button {
+  background-color: #228b22;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.categories button:hover {
+  background-color: #1c6b1c;
+}
