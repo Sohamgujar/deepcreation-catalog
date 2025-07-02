@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deep Creation Catalog</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f1f1f1;
+    }
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 30px;
+    }
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+    }
+    .product h3 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+    .product p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 14px;
+    }
+    .whatsapp {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .whatsapp:hover {
+      background-color: #128C7E;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Deep Creation Product Catalog</h1>
+
+  <div class="catalog">
+
+    <!-- ✅ Product 1 -->
+    <div class="product">
+  <img src="https://i.ibb.co/HT6DbwwQ/Whats-App-Image-2025-06-08-at-18-32-24-86893970.jpg" alt="Ganpati Decor">
+  <h3>Rangoli</h3>
+  <p><strong>Price:</strong> ₹2700</p>
+  <p>Vibrant Ganpati decoration with elegant backdrop and floral items.</p>
+  <a class="whatsapp" href="https://wa.me/919545668366?text=I want to buy Rangoli (₹2700)%0AImage: https://i.ibb.co/HT6DbwwQ/Whats-App-Image-2025-06-08-at-18-32-24-86893970.jpg" target="_blank">
+  Buy on WhatsApp
+</a>
+
+</div>
+
+
+    <!-- ✅ Product 2 -->
+    <div class="product">
+      <img src="https://res.cloudinary.com/drs4hyvrp/image/upload/v1719998888/sample2.jpg" alt="Festive Toran">
+      <h3>Festive Toran</h3>
+      <p><strong>Price:</strong> ₹249</p>
+      <p>Traditional door hanging made with artificial flowers and beads.</p>
+      <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX?text=I want to buy Festive Toran (₹249)">Buy on WhatsApp</a>
+    </div>
+
+    <!-- ✅ Add More Products Below -->
+    <!-- Just copy a <div class="product">...</div> block -->
+
+  </div>
+
+</body>
+</html>
