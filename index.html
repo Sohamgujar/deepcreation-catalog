@@ -100,20 +100,51 @@
   <button onclick="filterProducts('haar')">Haar/Kanthi</button>
   <button onclick="filterProducts('latkan')">Latkan</button>
   <button onclick="filterProducts('decor')">Home Decor</button>
+  <script>
+  const banner = document.getElementById("exhibition-banner");
+
+  function filterProducts(category) {
+    const cards = document.querySelectorAll(".product-card");
+    let matchFound = false;
+
+    cards.forEach(card => {
+      if (category === "all" || card.classList.contains(category)) {
+        card.style.display = "block";
+        matchFound = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Show banner only if "all" is selected (i.e., homepage view)
+    if (category === "all") {
+      banner.style.display = "flex";
+    } else {
+      banner.style.display = "none";
+    }
+  }
+
+  // Initial setup to show all on page load
+  window.onload = function () {
+    filterProducts("all");
+  };
+</script>
+
 </div>
 
-<!-- 🔔 Upcoming Exhibition Announcement -->
-<section style="background-color: #fff3cd; border: 2px solid #ffeeba; padding: 20px; text-align: center; margin-bottom: 20px;">
-  <h2 style="color: #856404; margin-bottom: 10px;">📢 Upcoming Exhibition</h2>
-  <img src="https://i.ibb.co/jktZ8CjC/Whats-App-Image-2025-07-05-at-20-51-39-ea0bcbf9.jpg" alt="Deep Creation Exhibition Banner" style="max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px;">
-  <p style="font-size: 16px; color: #000;">
-    We are excited to invite you to our upcoming exhibition!<br><br>
-    📅 <strong>Date:</strong> 7th, 8th, 9th, and 10th August 2025<br>
-    🏛️ <strong>Hall:</strong> Scout Banquet Hall<br>
-    📍 <strong>Location:</strong> Shivaji Park, Dadar<br><br>
-    🛍️ <strong>Do visit our stall and explore handcrafted decor and accessories by Deep Creation!</strong>
-  </p>
-</section>
+
+<!-- Upcoming Exhibition Banner - Homepage Only -->
+<div id="exhibition-banner" style="display: flex; align-items: center; gap: 20px; margin: 30px 0; padding: 20px; background-color: #fff8e1; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  <img src="https://i.ibb.co/jktZ8CjC/Whats-App-Image-2025-07-05-at-20-51-39-ea0bcbf9.jpg" alt="Exhibition Banner" style="width: 250px; height: auto; border-radius: 10px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);">
+  <div>
+    <h2 style="margin: 0 0 10px; color: #d32f2f;">📢 Upcoming Exhibition</h2>
+    <p style="margin: 0;"><strong>Date:</strong> 7, 8, 9, 10 August 2025</p>
+    <p style="margin: 0;"><strong>Hall:</strong> Scout Banquet Hall</p>
+    <p style="margin: 0;"><strong>Address:</strong> Shivaji Park, Dadar</p>
+    <p style="margin: 10px 0 0; font-weight: bold;">✨ Do visit our stall!</p>
+  </div>
+</div>
+
 
 
   <!-- ✅ Product Grid -->
