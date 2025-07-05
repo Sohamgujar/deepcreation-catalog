@@ -100,36 +100,6 @@
   <button onclick="filterProducts('haar')">Haar/Kanthi</button>
   <button onclick="filterProducts('latkan')">Latkan</button>
   <button onclick="filterProducts('decor')">Home Decor</button>
-  <script>
-  const banner = document.getElementById("exhibition-banner");
-
-  function filterProducts(category) {
-    const cards = document.querySelectorAll(".product-card");
-    let matchFound = false;
-
-    cards.forEach(card => {
-      if (category === "all" || card.classList.contains(category)) {
-        card.style.display = "block";
-        matchFound = true;
-      } else {
-        card.style.display = "none";
-      }
-    });
-
-    // Show banner only if "all" is selected (i.e., homepage view)
-    if (category === "all") {
-      banner.style.display = "flex";
-    } else {
-      banner.style.display = "none";
-    }
-  }
-
-  // Initial setup to show all on page load
-  window.onload = function () {
-    filterProducts("all");
-  };
-</script>
-
 </div>
 
 
@@ -1073,6 +1043,36 @@
       });
     }
   </script>
+
+<script>
+  const banner = document.getElementById("exhibition-banner");
+
+  function filterProducts(category) {
+    const cards = document.querySelectorAll(".product-card");
+    let matchFound = false;
+
+    cards.forEach(card => {
+      if (category === "all" || card.classList.contains(category)) {
+        card.style.display = "block";
+        matchFound = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Show banner only if "all" is selected (i.e., homepage view)
+    if (category === "all") {
+      banner.style.display = "flex";
+    } else {
+      banner.style.display = "none";
+    }
+  }
+
+  // Initial setup to show all on page load
+  window.onload = function () {
+    filterProducts("all");
+  };
+</script>
 
 </body>
 </html>
