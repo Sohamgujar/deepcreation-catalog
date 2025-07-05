@@ -122,32 +122,107 @@
   <button onclick="filterProducts('decor')">Home Decor</button>
 </div>
 
-<!-- 🌟 Scrollable Exhibition Banner Section -->
-<div id="exhibition-container" style="overflow-x: auto; white-space: nowrap; padding: 20px 10px;">
-  <!-- Exhibition 1 -->
-  <div class="exhibition-banner" style="display: inline-block; width: 90%; max-width: 500px; margin-right: 20px; background: #1e1e1e; padding: 20px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <img src="https://i.ibb.co/jktZ8CjC/Whats-App-Image-2025-07-05-at-20-51-39-ea0bcbf9.jpg" alt="Exhibition Banner" style="width: 100%; border-radius: 10px; object-fit: cover; max-height: 250px;" />
-    <div style="margin-top: 15px;">
-      <h2 style="color:#1e1e1e; margin: 0;">Upcoming Exhibition</h2>
-      <p style="margin: 5px 0;"><strong>📅 Dates:</strong> 7, 8, 9, 10 August 2025</p>
-      <p><strong>📍 Hall:</strong> Scout Guide Hall</p>
-      <p><strong>🗺 Address:</strong> Shivaji Park, Dadar</p>
-      <p style="color: #2e7d32; font-weight: bold;">Do visit our stall!</p>
+<!-- 🌟 Scrollable Exhibition Banner Section with Dots -->
+<style>
+  #exhibition-wrapper {
+    position: relative;
+    padding: 20px 10px 40px;
+  }
+
+  #exhibition-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .exhibition-banner {
+    display: inline-block;
+    width: 90%;
+    max-width: 500px;
+    margin-right: 20px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    scroll-snap-align: start;
+    color: white;
+  }
+
+  .exhibition-banner h2,
+  .exhibition-banner p {
+    color: white;
+  }
+
+  .exhibition-dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #2e7d32;
+  }
+</style>
+
+<div id="exhibition-wrapper">
+  <div id="exhibition-container">
+    <!-- Exhibition 1 -->
+    <div class="exhibition-banner" id="ex1">
+      <img src="https://i.ibb.co/jktZ8CjC/Whats-App-Image-2025-07-05-at-20-51-39-ea0bcbf9.jpg" alt="Exhibition Banner" style="width: 100%; border-radius: 10px; object-fit: cover; max-height: 250px;" />
+      <div style="margin-top: 15px;">
+        <h2>Upcoming Exhibition</h2>
+        <p><strong>📅 Dates:</strong> 7, 8, 9, 10 August 2025</p>
+        <p><strong>📍 Hall:</strong> Scout Guide Hall</p>
+        <p><strong>🗺 Address:</strong> Shivaji Park, Dadar</p>
+        <p style="color: #2e7d32; font-weight: bold;">Do visit our stall!</p>
+      </div>
+    </div>
+
+    <!-- Exhibition 2 -->
+    <div class="exhibition-banner" id="ex2">
+      <img src="https://i.ibb.co/jktZ8CjC/Whats-App-Image-2025-07-05-at-20-51-39-ea0bcbf9.jpg" alt="Exhibition Banner 2" style="width: 100%; border-radius: 10px; object-fit: cover; max-height: 250px;" />
+      <div style="margin-top: 15px;">
+        <h2>Upcoming Exhibition</h2>
+        <p><strong>📅 Dates:</strong> 1, 2, 3 August 2025</p>
+        <p><strong>📍 Hall:</strong> CKP HALL</p>
+        <p><strong>🗺 Address:</strong> Kharkar Alley, Thane West</p>
+        <p style="color: #2e7d32; font-weight: bold;">Do visit our stall!</p>
+      </div>
     </div>
   </div>
 
-  <!-- Exhibition 2 -->
-  <div class="exhibition-banner" style="display: inline-block; width: 90%; max-width: 500px; margin-right: 20px; background: #1e1e1e; padding: 20px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <img src="https://i.ibb.co/jktZ8CjC/Whats-App-Image-2025-07-05-at-20-51-39-ea0bcbf9.jpg" alt="Exhibition Banner 2" style="width: 100%; border-radius: 10px; object-fit: cover; max-height: 250px;" />
-    <div style="margin-top: 15px;">
-      <h2 style="color: #1e1e1e; margin: 0;">Upcoming Exhibition</h2>
-      <p style="margin: 5px 0;"><strong>📅 Dates:</strong> 1, 2, 3 August 2025</p>
-      <p><strong>📍 Hall:</strong> CKP HALL</p>
-      <p><strong>🗺 Address:</strong> Kharkar Alley, Thane West</p>
-      <p style="color: #2e7d32; font-weight: bold;">Do visit our stall!</p>
-    </div>
+  <!-- Scroll Indicator Dots -->
+  <div class="exhibition-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
   </div>
 </div>
+
+<script>
+  const container = document.getElementById('exhibition-container');
+  const dots = document.querySelectorAll('.dot');
+
+  container.addEventListener('scroll', () => {
+    const scrollLeft = container.scrollLeft;
+    const scrollWidth = container.scrollWidth;
+    const offsetWidth = container.offsetWidth;
+
+    const index = Math.round(scrollLeft / offsetWidth);
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  });
+</script>
 
 
 
